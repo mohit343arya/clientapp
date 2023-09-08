@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: JT Marine;
+	src: ('assets/fonts/jt-marine-bold.otf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body {
+	margin: 0;
+	font-family: "JT Marine", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: 0.2px;
+}
+
+.chat-list-card {
+	padding: 1rem;
+}
+
+.chat-list-title {
+	color: #A8A8A8;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 18.571px;
+	/* 142.857% */
+}
+
+.chat-list-subtitle {
+	color: #666;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 12px;
+	/* 109.091% */
+}
+
+.chat-list-date {
+	color: rgba(0, 0, 0, 0.60);
+	text-align: right;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 30px;
+	/* 300% */
+}
+
+.chat-list-icon-text {
+	color: rgba(0, 0, 0, 0.60);
+	text-align: right;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 300;
+	/* 300% */
+}
+
+.chat-list-icon {
+	margin-top: -6px;
+}
+
+.chat-list-box {
+	/* height: 100%; */
+	overflow-y: scroll;
+	padding-bottom: 2rem;
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
+}
+
+.chat-list-box::-webkit-scrollbar {
+	/* width: 10px; */
+	width: 0;
+	background: #cccccc !important;
+	border-radius: 10px;
+}
+
+.chat-top-bar img {
+	width: 22px;
+}
+
+.chat-top-bar .chat-top-bar-text {
+	color: #555;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 30px;
+	/* 250% */
+}
+
+.chat-box-content {
+	/* height: 40%; */
+	overflow-y: scroll;
+}
+
+.chat-box-content::-webkit-scrollbar {
+	/* width: 10px; */
+	width: 0;
+	background: #cccccc !important;
+	border-radius: 10px;
+}
+
+.chat-box-header-title {
+	color: #4F4F4F;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 18.571px;
+	/* 142.857% */
+}
+
+.chat-box-header-subTitle {
+	color: #4F4F4F;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 22px;
+}
+
+.chat-box-header-description {
+	color: rgba(0, 0, 0, 0.60);
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 20px;
+	/* 300% */
+}
+
+.chat-box-header-status {
+	color: #154CB8;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 18.571px;
+	/* 168.831% */
+}
+
+.chat-breaker div {
+	color: #555;
+	text-align: center;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 15px;
+	/* 125% */
+}
+
+.chat-breaker .text {
+	padding: 0 2rem;
+	margin-top: 10px;
+	color: #555;
+	text-align: center;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	/* 125% */
+}
+
+.chat-breaker .line {
+	color: #D9D9D9;
+}
+
+.chat-breaker .end-chat-text {
+	padding: 0 2rem;
+	margin-top: 10px;
+	color: #CB2125;
+	text-align: center;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	/* 142.857% */
+}
+
+.chat-breaker-title {
+	color: #555;
+	text-align: center;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 18.571px;
+	/* 142.857% */
+}
+
+.footer-close-btn {
+	min-width: 162px;
+	height: 36px;
+	background: #D9D9D9;
+}
+
+.footer-close-btn .text {
+	color: #555;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 30px;
+	/* 272.727% */
+}
+
+.intercom-btn {
+	color: #FFF;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 200;
+	min-width: 106px;
+	line-height: 30px
+}
+
+.footer-respond-text {
+	color: rgba(0, 0, 0, 0.60);
+	text-align: right;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 10px;
+	/* 83.333% */
+}
+
+.message-via-text {
+	color: rgba(0, 0, 0, 0.60);
+	text-align: right;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 300;
+	/* 272.727% */
+}
+
+.chat-box-user-name {
+	color: #A8A8A8;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 30px;
+	/* 142.857% */
+}
+
+.chat-box-text {
+	color: #666;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+	/* 133.333% */
+}
+
+.chat-box-text-timestamp {
+	color: rgba(0, 0, 0, 0.60);
+	text-align: center;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 30px;
+	/* 300% */
+}
+
+.chat-box-info-title {
+	color: #FFF;
+	text-align: center;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 30px;
+	/* 230.769% */
+}
+
+.chat-box-info-header {
+	background: #555;
+}
+
+.user-msg-input {
+	color: rgba(0, 0, 0, 0.20);
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 12px;
+	/* 85.714% */
+}
