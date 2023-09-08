@@ -3,7 +3,9 @@ import Search from "../../assets/icons/search.svg"
 import Message from "../../assets/icons/message.svg"
 import ChatListCard from "./ChatListCard";
 
-const ChatList = () => {
+
+const ChatList = (props:any) => {
+	const {chats, onSelectChat} = props;
 	return (
 		<div className="flex flex-col w-2/5 bg-gray-200 chat-list-box pl-12 pr-4 pt-2 pb-0">
 			<div className="flex flex-row justify-between py-2 px-2 chat-top-bar">
@@ -24,14 +26,10 @@ const ChatList = () => {
 				</div>
 			</div>
 			<div className="px-2 ">
-				<ChatListCard icon={"xintercom"}/>
-				<ChatListCard icon={"xemail"}/>
-				<ChatListCard icon={"xsms"}/>
-				<ChatListCard icon={"xwhatsapp"}/>
-				<ChatListCard icon={"xintercom"}/>
-				<ChatListCard icon={"xintercom"}/>
-				<ChatListCard icon={"xintercom"}/>
-				<ChatListCard icon={"xintercom"}/>
+				{chats?.map((chat:any, index:any) =>{
+					return <ChatListCard icon={"xintercom"} key={index} chat={chat} onSelectChat={onSelectChat}/>
+				})}
+				
 			</div>
 		</div>
 	);

@@ -271,10 +271,26 @@ body {
 }
 
 .user-msg-input {
-	color: rgba(0, 0, 0, 0.20);
 	font-size: 14px;
-	font-style: italic;
 	font-weight: 300;
 	line-height: 12px;
 	/* 85.714% */
+}
+
+.text-custom-grey {
+	color: rgba(0, 0, 0, 0.20);
+}
+.text-custom-black {
+	color: #000000;
+}
+
+#chatBoxContent {
+	scroll-behavior:smooth;
+	overflow-y: scroll;
+}
+
+.emoji-picker {
+	bottom: 25px;
+	position: absolute;
+	left: 0;
 }

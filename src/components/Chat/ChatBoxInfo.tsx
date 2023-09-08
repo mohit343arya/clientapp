@@ -1,8 +1,7 @@
-import React from "react";
 import { FaPlus, FaPen } from "react-icons/fa";
 import maskGroup from '../../assets/icons/Mask group.png'
 
-const ChatBoxInfo = () => {
+const ChatBoxInfo = (props: any) => {
 	return (
 		<div className="flex flex-row my-4">
 			<div className="w-[60px] h-[40px] rounded-full ml-4">
