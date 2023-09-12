@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BiPencil } from "react-icons/bi";
 import Archieve from '../../assets/icons/archive.svg';
 import iconGroup from '../../assets/icons/Group 275.png';
@@ -7,14 +7,16 @@ import Attachment from '../../assets/icons/attachment.svg';
 import Emoji from '../../assets/icons/emoji.svg';
 import Close from '../../assets/icons/close.svg'
 import EmojiPicker from 'emoji-picker-react';
+import io from 'socket.io-client'
 
 const ChatBoxFooter = (props: any) => {
 
 	const [msg, setMsg] = useState('')
 	const [showEmoji, setShowEmoji] = useState(false)
+
 	const sendMessage = () => {
 		props.sendMessage({ msg: msg, type: 'text' })
-		setMsg('')
+        setMsg('')
 		setShowEmoji(false)
 	}
 
@@ -105,7 +107,7 @@ const ChatBoxFooter = (props: any) => {
 					</div>
 					<div className="flex flex-col items-end mr-2 w-30 ">
 						<div className="bg-indigo-700 position-relative rounded overflow-hidden flex flex-row items-center ">
-							<button onClick={sendMessage} disabled={msg === ''} type='button' className=" text-white flex flex-row items-center   px-8 p-2 h-[40px]">
+							<button onClick={sendMessage} disabled={msg === ''} type='button' className=" text-white flex flex-row items-center   px-2 md:px-8 p-2 h-[40px]">
 								<div className="text-white text-sm me-[5px]">
 									<img src={iconintercome} alt="" />
 								</div>

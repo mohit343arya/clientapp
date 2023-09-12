@@ -11,7 +11,7 @@ const ChatListCard = (props:any) => {
 
 
 	return (
-		<div className="w-full flex flex-col bg-white rounded my-2 chat-list-card" onClick={() =>
+		<div className="w-full flex flex-col bg-white rounded my-2 chat-list-card  cardStyle" onClick={() =>
 		onSelectChat(chat)}>
 			<div className="flex flex-row justify-between">
 				<div className="chat-list-title">{chat?.name}</div>

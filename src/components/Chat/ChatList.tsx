@@ -1,13 +1,33 @@
 import Search from "../../assets/icons/search.svg"
-
 import Message from "../../assets/icons/message.svg"
 import ChatListCard from "./ChatListCard";
+import io from 'socket.io-client';
+import React,{useEffect, useState} from 'react'
 
 
 const ChatList = (props:any) => {
 	const {chats, onSelectChat} = props;
+	const [message,setMessage] = useState('')
+
+	// useEffect(() => {
+	
+	// 	socket.on('message', (message:any) => {
+	// 	  setMessages((prevMessages:any) => [...prevMessages, message]);
+	// 	});
+	
+	// 	return () => {
+	// 	  socket.disconnect();
+	// 	};
+	//   }, []);
+
+	//   const sendMessage = () => {
+	// 	// Send the message to the WebSocket server
+	// 	socket.emit('chatMessage', message);
+	// 	setMessage('');
+	//   };
+
 	return (
-		<div className="flex flex-col w-2/5 bg-gray-200 chat-list-box pl-12 pr-4 pt-2 pb-0">
+		<div className="chatlist flex flex-col w-2/5 bg-gray-200 chat-list-box pl-12 pr-4 pt-2 pb-0 ">
 			<div className="flex flex-row justify-between py-2 px-2 chat-top-bar">
 				<div className="flex flex-row justify-start items-center">
 					<div className="text-2xl ">
@@ -25,7 +45,7 @@ const ChatList = (props:any) => {
 					</div>
 				</div>
 			</div>
-			<div className="px-2 ">
+			<div className="px-2 listCardStyle">
 				{chats?.map((chat:any, index:any) =>{
 					return <ChatListCard icon={"xintercom"} key={index} chat={chat} onSelectChat={onSelectChat}/>
 				})}
