@@ -7,24 +7,6 @@ import React,{useEffect, useState} from 'react'
 
 const ChatList = (props:any) => {
 	const {chats, onSelectChat} = props;
-	const [message,setMessage] = useState('')
-
-	// useEffect(() => {
-	
-	// 	socket.on('message', (message:any) => {
-	// 	  setMessages((prevMessages:any) => [...prevMessages, message]);
-	// 	});
-	
-	// 	return () => {
-	// 	  socket.disconnect();
-	// 	};
-	//   }, []);
-
-	//   const sendMessage = () => {
-	// 	// Send the message to the WebSocket server
-	// 	socket.emit('chatMessage', message);
-	// 	setMessage('');
-	//   };
 
 	return (
 		<div className="chatlist flex flex-col w-2/5 bg-gray-200 chat-list-box pl-12 pr-4 pt-2 pb-0 ">

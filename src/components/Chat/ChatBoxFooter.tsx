@@ -7,15 +7,45 @@ import Attachment from '../../assets/icons/attachment.svg';
 import Emoji from '../../assets/icons/emoji.svg';
 import Close from '../../assets/icons/close.svg'
 import EmojiPicker from 'emoji-picker-react';
-import io from 'socket.io-client'
+import io from 'socket.io-client';
+import axios from 'axios';
 
+
+const socket= io('');
 const ChatBoxFooter = (props: any) => {
 
 	const [msg, setMsg] = useState('')
 	const [showEmoji, setShowEmoji] = useState(false)
+	const [ApiData, setApiData] = useState('')
+
+	useEffect(() => {
+	
+		socket.on('connect', () =>{
+			console.log("connected to server")
+		});
+
+		socket.on('message', (data) => {
+			props?.setMsg([...props?.msg, data]);
+		  });
+
+		return () => {
+		  socket.disconnect();
+		};
+	  }, [props?.msg]);
+
+	  useEffect(() => {
+		axios.get('https://api.example.com/data') // Replace with your API endpoint
+		  .then((response) => {
+			setApiData(response.data);
+		  })
+		  .catch((error) => {
+			console.error('Error fetching data:', error);
+		  });
+	  }, []);
 
 	const sendMessage = () => {
 		props.sendMessage({ msg: msg, type: 'text' })
+		socket.emit('message', { text: msg });
         setMsg('')
 		setShowEmoji(false)
 	}
@@ -70,12 +100,12 @@ const ChatBoxFooter = (props: any) => {
 	};
 	return (
 		<div className="flex flex-col">
-			<div className="flex flex-row justify-between">
-				<div className="flex flex-row justify-between items-center text-gray-700 p-2">
+			<div className="flex flex-row flex-wrap  md:flex-nowrap justify-between">
+				<div className="flex flex-row justify-between items-center text-gray-700 p-2 w-full md:w-auto">
 					<BiPencil />
 					<div className="text-xs ml-2 text">Inseir nova Nota</div>
 				</div>
-				<div className="flex flex-row justify-between items-center footer-close-btn px-2">
+				<div className="flex flex-row justify-between items-center footer-close-btn px-2 w-full md:w-auto">
 					<img src={Close} alt="Close" className="ps-2" />
 					<div className="text-xs ml-2 text">Encerrar Attendimento</div>
 				</div>
@@ -108,12 +138,12 @@ const ChatBoxFooter = (props: any) => {
 					<div className="flex flex-col items-end mr-2 w-30 ">
 						<div className="bg-indigo-700 position-relative rounded overflow-hidden flex flex-row items-center ">
 							<button onClick={sendMessage} disabled={msg === ''} type='button' className=" text-white flex flex-row items-center   px-2 md:px-8 p-2 h-[40px]">
-								<div className="text-white text-sm me-[5px]">
+								<div className="text-white text-sm mx-2 md:mx-0 md:me-[5px]">
 									<img src={iconintercome} alt="" />
 								</div>
-								<div className="text-sm mx-2 tracking-[0.5px]">Envoir</div>
+								<div className="footer-button hidden md:block text-sm mx-2 tracking-[0.5px]">Envoir</div>
 							</button>
-							<div className="text-white  h-[40px] text-sm ">
+							<div className="text-white hidden md:block h-[40px] text-sm ">
 								<img src={iconGroup} alt="" className="border-l border-l-white w-full h-full" />
 							</div>
 						</div>

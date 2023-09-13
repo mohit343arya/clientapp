@@ -17,13 +17,13 @@ const ChatListCard = (props:any) => {
 				<div className="chat-list-title">{chat?.name}</div>
 				<div className="chat-list-date">{chat?.date} - {chat?.time}</div>
 			</div>
-			<div className="mt-2 flex flex-row justify-between items-end">
-				<div className="w-3/5 chat-list-subtitle">
+			<div className="mt-2 flex flex-wrap md:flex-nowrap flex-row justify-between items-end">
+				<div className="w-full md:w-3/5 chat-list-subtitle">
 				{chat?.text}
 				</div>
-				<div className="flex flex-row">
+				<div className="flex mt-3 md:mt-0 flex-row">
 					<div className="chat-list-icon-text">{chat?.msg}</div>
-					<div className="text-2xl text-blue-500 ml-1 chat-list-icon">
+					<div className="text-2xl mt-3 md:mt-0 text-blue-500 ml-1 chat-list-icon">
 						{chat?.from === "intercom" ? <img src={iconIntercom} alt=""/> : ""}
 						{chat?.from === "email" ? <img src={iconEmail} alt=""/> :""}
 						{chat?.from === "sms" ? <img src={iconSms} alt=""/> :""}

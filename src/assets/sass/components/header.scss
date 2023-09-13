@@ -9,7 +9,7 @@
     @media(max-width: 992px){
         flex-wrap: wrap;
         height: auto;
-        padding: 20px;
+        padding: 0 20px;
     }
 
     .icon{
@@ -196,7 +196,7 @@
 
         @media(max-width: 992px){
             order: 2;
-            flex-basis: 32px;
+            flex-basis: 42px;
             padding: 0 20px;
         }
 
